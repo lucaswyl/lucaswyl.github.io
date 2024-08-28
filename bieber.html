@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belieber Mania</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff416c, #ff4b2b, #ffe600, #64f38c, #36d1dc);
+            background-size: 200%;
+            color: white;
+            text-align: center;
+            animation: crazyBackground 4s linear infinite;
+        }
+
+        @keyframes crazyBackground {
+            0% {
+                background-position: 0%;
+            }
+            100% {
+                background-position: 200%;
+            }
+        }
+
+        header {
+            background: linear-gradient(45deg, #ff416c, #36d1dc, #ffe600);
+            padding: 60px 0;
+            margin-bottom: 50px;
+            border-bottom: 4px solid #64f38c;
+            animation: rainbowText 3s linear infinite;
+        }
+
+        @keyframes rainbowText {
+            0% {
+                background-position: 0%;
+            }
+            100% {
+                background-position: 200%;
+            }
+        }
+
+        h1 {
+            font-size: 5rem;
+            margin: 0;
+            font-weight: 900;
+            letter-spacing: 4px;
+            background: linear-gradient(90deg, #ff416c, #64f38c, #ffe600, #ff4b2b, #36d1dc);
+            background-size: 300%;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: rainbowText 2s linear infinite;
+        }
+
+        p.tagline {
+            font-size: 1.8rem;
+            margin: 15px 0 0;
+            font-style: italic;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 70px;
+        }
+
+        .gallery img {
+            width: 180px;
+            height: auto;
+            border-radius: 50%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 10px solid #ffe600;
+            animation: spin 3s linear infinite;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.5) rotate(360deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            z-index: 20;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .photo-frame {
+            position: relative;
+            background: linear-gradient(45deg, #36d1dc, #ffe600, #ff416c);
+            padding: 25px;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.4);
+        }
+
+        .photo-frame::before,
+        .photo-frame::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #ff4b2b;
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            animation: float 1.5s ease-in-out infinite;
+        }
+
+        .photo-frame::before {
+            top: -30px;
+            left: -30px;
+        }
+
+        .photo-frame::after {
+            bottom: -30px;
+            right: -30px;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .video-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 70px;
+            background: linear-gradient(45deg, #ffe600, #ff416c, #36d1dc);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        iframe {
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        iframe:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            background: linear-gradient(45deg, #ff416c, #64f38c);
+            padding: 30px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ffe600;
+            color: #ff4b2b;
+            padding: 25px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 40px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .btn:hover {
+            transform: scale(1.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Belieber Mania</h1>
+        <p class="tagline">Bieber Fever is here! Welcome to the Wild Side!</p>
+    </header>
+
+    <section class="gallery">
+        <div class="photo-frame">
+            <img src="justinpics/justin1.jpg" alt="Justin Bieber 1">
+        </div>
+        <div class="photo-frame">
+            <img src="justinpics/justin2.jpg" alt="Justin Bieber 2">
+        </div>
+        <div class="photo-frame">
+            <img src="justinpics/justin3.jpg" alt="Justin Bieber 3">
+        </div>
+        <div class="photo-frame">
+            <img src="justinpics/justin4.jpg" alt="Justin Bieber 4">
+        </div>
+        <div class="photo-frame">
+            <img src="justinpics/justin5.jpg" alt="Justin Bieber 5">
+        </div>
+        <div class="photo-frame">
+            <img src="justinpics/justin6.jpg" alt="Justin Bieber 6">
+        </div>
+    </section>
+
+    <section class="video-gallery">
+        <iframe width="400" height="250" src="https://www.youtube.com/embed/kffacxfA7G4" title="Justin Bieber - Baby ft. Ludacris" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
